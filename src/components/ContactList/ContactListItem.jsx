@@ -1,10 +1,10 @@
 import { Li, Span,Button } from './ContactListItem.styled';
 import PropTypes from 'prop-types';
 
-export const ContactListItem = ({ id, name, phone, delContact }) => {
+export const ContactListItem = ({ id, name, number, delContact }) => {
         return (
         <Li>
-           <Span>{name}</Span> : <Span>{phone}</Span>
+           <Span>{name}</Span> : <Span>{number}</Span>
             <Button type="button" onClick={()=> delContact(id)}>Delete</Button>
         </Li>
     )
@@ -12,6 +12,6 @@ export const ContactListItem = ({ id, name, phone, delContact }) => {
 ContactListItem.propTypes = {
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    phone: PropTypes.string.isRequired,
+    number: PropTypes.string.isRequired,
   
 }

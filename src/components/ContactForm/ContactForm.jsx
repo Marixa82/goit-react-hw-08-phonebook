@@ -5,9 +5,9 @@ import PropTypes from 'prop-types';
 
 
 
-export default function ContactForm (props) {
+export const ContactForm = (props) => {
   const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
+  const [number, setNumber] = useState('');
   
  
   const handleChangeForm = event => {
@@ -17,7 +17,7 @@ export default function ContactForm (props) {
       setName(value);
       break;
     case 'phone':
-      setPhone(value);
+      setNumber(value);
       break;
     default:
       return;
@@ -31,19 +31,19 @@ export default function ContactForm (props) {
    const isValidatedForm = validateForm();
 
   if (isValidatedForm) {
-    onAdd({ id, name, phone });
+    onAdd({ id, name, number });
     resetForm();
   }
 };
 
   const resetForm = () => {
     setName('');
-    setPhone('');
+    setNumber('');
 } 
 
 const validateForm = () => {
   const { onCheckUnique } = props;
-  if (!name || !phone) {
+  if (!name || !number) {
     alert('Some field is empty');
     return false;
   }
@@ -53,7 +53,7 @@ const validateForm = () => {
   return (
     <Form onSubmit={handelSubmit}>
       <Label htmlFor={id}>
-        Name<Input
+        Name:<Input
           type="text"
           name='name'
           value={name}
@@ -62,18 +62,18 @@ const validateForm = () => {
           id={id}
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-          required />
+          required  />
       </Label>
-      <Label htmlFor=""> Number
+      <Label htmlFor=""> Number:
         <Input
           type="tel"
           name='phone'
-          value={phone}
+          value={number}
           placeholder="Enter contact number"
           onChange={handleChangeForm}
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-          required
+          required  
         /></Label>
       <Button type='submit'>Add contact</Button>
     </Form>
