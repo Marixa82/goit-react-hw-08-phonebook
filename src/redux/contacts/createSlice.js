@@ -19,32 +19,16 @@ const contactsSlice = createSlice({
         },
     },
     extraReducers: (builder) => {
-        builder.addCase(fetchContacts.pending, (state) => {
-            state.contacts.isLoading = true;
-        })
+        builder
             .addCase(fetchContacts.fulfilled, (state, action) => {
                 state.contacts.isLoading = false;
                 state.contacts.error = null;
                 state.contacts.items = action.payload;
             })
-            .addCase(fetchContacts.rejected, (state, action) => {
-                state.contacts.isLoading = false;
-                state.contacts.error = action.error;
-            })
-            .addCase(addContact.pending, (state) => {
-                state.contacts.isLoading = true;
-            })
             .addCase(addContact.fulfilled, (state, action) => {
                 state.contacts.isLoading = false;
                 state.contacts.error = null;
                 state.contacts.items.push(action.payload);
-            })
-            .addCase(addContact.rejected, (state, action) => {
-                state.contacts.isLoading = false;
-                state.contacts.error = action.error;
-            })
-            .addCase(deleteContact.pending, (state) => {
-                state.contacts.isLoading = true;
             })
             .addCase(deleteContact.fulfilled, (state, action) => {
                 state.contacts.isLoading = false;
@@ -55,10 +39,16 @@ const contactsSlice = createSlice({
                 );
                 state.contacts.items.splice(index, 1);
             })
-            .addCase(deleteContact.rejected, (state, action) => {
-                state.contacts.isLoading = false;
-                state.contacts.error = action.error;
-            });
+            .addMatcher(action => action.type.endsWith('/pending'),
+                (state) => {
+                    state.contacts.isLoading = true;
+                    state.contacts.error = null;
+                })
+            .addMatcher(action => action.type.endsWith('/rejected'),
+                (state, action) => {
+                    state.contacts.isLoading = false;
+                    state.contacts.error = action.error;
+                })
     },
 });
 export const { setFilter } = contactsSlice.actions;
