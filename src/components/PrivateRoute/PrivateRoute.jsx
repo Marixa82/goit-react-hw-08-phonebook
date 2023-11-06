@@ -5,7 +5,7 @@ import authSelectors from 'redux/auth/auth-selectors';
 import { Navigate } from 'react-router-dom';
 
 const PrivateRoute = ({ children, redirectTo = { LOGIN_ROUTE } }) => { 
-    const authenticated = useSelector(authSelectors.selectUserAuthenticated);
+    const authenticated = useSelector(authSelectors.selectUserIsLoggedIn);
 
     
     return (

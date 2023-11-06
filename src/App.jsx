@@ -11,7 +11,7 @@ const NotFoundView = lazy(() => import('views/NotFound'));
 
 export const AppBar = () => {
     const dispatch = useDispatch();
-    const authenticated = useSelector(authSelectors.selectUserAuthenticated);
+    const authenticated = useSelector(authSelectors.selectUserIsLoggedIn);
     const userData = useSelector(authSelectors.selectUserName);
 
 

@@ -5,7 +5,7 @@ import authSelectors from 'redux/auth/auth-selectors';
 import { Navigate } from 'react-router-dom';
 
 const RestrictedRoute = ({ children, redirectTo = { HOME_ROUTE } }) => { 
-    const authenticated = useSelector(authSelectors.selectUserAuthenticated);
+    const authenticated = useSelector(authSelectors.selectUserIsLoggedIn);
 
     
     return (

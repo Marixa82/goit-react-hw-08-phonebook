@@ -12,7 +12,6 @@ const LoginView = () => {
             password,
         };
         dispatch(authOperations.logIn(formData));
-        console.log(email, password);
     }
     return (
         <div>
