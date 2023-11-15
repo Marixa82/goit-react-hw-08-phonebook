@@ -52,6 +52,13 @@ color: #F5FFFA;
 text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 
   `
+const H2 = styled.h2`
+font-weight: 400;
+margin: 10px 0;
+color: #F5FFFA;
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+
+  `
 const Container = styled.div`
 
     display: flex;
@@ -61,7 +68,12 @@ flex-direction: column;
 `
 const Input = styled.input`
  border-radius: 5px;
- border: none;
- background-image: linear-gradient(to right, #ECE9E6 0%, #FFFFFF 51%, #ECE9E6 100%);
+  outline: none;
+  background-image: linear-gradient(to right, #EFEFBB 0%, #FFFFFF 51%, #e9d362 100%);
+  transition: border-color 0.3s ease-in-out;
+
+  &:focus {
+    border-color: #007bff; /* Змініть на колір, який ви хочете при введенні тексту */
+  }
  `
-export { Container, Title, Div, ButtonViews, FormViews, Input }
+export { Container, Title, Div, ButtonViews, FormViews, Input, H2 }

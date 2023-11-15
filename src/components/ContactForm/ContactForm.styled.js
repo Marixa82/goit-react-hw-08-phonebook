@@ -33,7 +33,7 @@ flex-direction:column;
 const Form = styled.form`
 max-width:400px;
 border: 2px solid black;
-margin-left:20px;
+
 padding:20px;
 border-radius: 10px;
 display:flex;

@@ -35,13 +35,22 @@ color: #F5FFFA;
 text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 font-weight: 700;
 margin-right: 12px;`
+
 const DefaultImg = styled(FaJenkins)`
-width: 30px;
-  height: auto;
-  object-fit: cover;
-  color: blueviolet;
+width: 40px;
+  height: 40px;
+  /* object-fit: cover; */
+  color: #F5FFFA;
   border-radius: 50%;
-  margin-right: 4px;`
+  margin-right: 4px;
+  /* background-color: #e9d362; */
+  background: linear-gradient(
+    to right, 
+     #e9d362 0%,
+    #333333 30%, 
+    #e9d362 100%);
+    
+    `
 
 const Button = styled.button`
   background: linear-gradient(

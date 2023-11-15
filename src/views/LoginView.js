@@ -16,7 +16,7 @@ const LoginView = () => {
     }
     return (
         <Container>
-            <Title>LoginIn</Title>
+            <Title>Login</Title>
             <FormViews onSubmit={handleSubmit}>
 
                 <label>
