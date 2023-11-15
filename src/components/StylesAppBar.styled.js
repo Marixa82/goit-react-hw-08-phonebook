@@ -53,11 +53,12 @@ width: 40px;
     `
 
 const Button = styled.button`
-  background: linear-gradient(
-    to right, 
-     #e9d362 0%,
-    #333333 51%, 
-    #e9d362 100%);
+background: linear-gradient(
+  to right,
+  #e9d362 0%,
+    #333333 51%,
+  #e9d362 100%);
+ /* background-color: #333333; */
   margin: 10px;
   padding: 10px 25px;
   text-align: center;
@@ -72,9 +73,10 @@ text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 
   &:hover {
     background-position: right center;
-    color: #fff;
+    color: #F5FFFA;
     text-decoration: none;
   }
 `;
 
 export { Header, Div, Link, DefaultImg, Span, Container, Button }
+

@@ -46,6 +46,7 @@ font-size: 10px;
 width:200px;
 height:20px;
 border-radius: 5px;
+border: none;
 outline:none;
 background-image: linear-gradient(to right, #EFEFBB 0%, #FFFFFF 51%, #e9d362 100%);
 &:active {
