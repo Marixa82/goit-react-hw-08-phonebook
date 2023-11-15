@@ -2,10 +2,10 @@
 import PrivateRoute from "components/PrivateRoute/PrivateRoute";
 import RestrictedRoute from "components/RestrictedRoute/RestrictedRoute";
 import { lazy } from "react";
-const HomeView = lazy(() => import('views/HomeView'));
+const HomeView = lazy(() => import('../views/HomeView'));
 const ContactView = lazy(() => import('../views/ContactView'));
-const LoginView = lazy(() => import('views/LoginView'));
-const RegisterView = lazy(() => import('views/RegisterView'));
+const LoginView = lazy(() => import('../views/LoginView'));
+const RegisterView = lazy(() => import('../views/RegisterView'));
 
 export const HOME_ROUTE = '/';
 export const CONTACTS_ROUTE = '/contacts';

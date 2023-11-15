@@ -1,14 +1,16 @@
 import React from 'react';
 import { HOME_ROUTE } from 'constants/route';
 import { Link } from 'react-router-dom';
+import { Div } from './views.styled';
 
-const NotFound = () => {
+export const NotFound = () => {
+    // return <div>404 - Not Found</div>;
     return (
-        <div>
+        <Div>
             Error 404. Sorry, page wasn`t found.{' '}
             <Link to={HOME_ROUTE}>Back to the Home page.</Link>
-        </div>
+        </Div>
     )
 }
+// console.log(NotFound)
 
-export default NotFound;

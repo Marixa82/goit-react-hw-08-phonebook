@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { authOperations } from "redux/auth/auth-operations";
+import { Title, Container, FormViews, ButtonViews, Input } from "./views.styled";
 
 const LoginView = () => {
     const dispatch = useDispatch();
@@ -14,23 +15,23 @@ const LoginView = () => {
         dispatch(authOperations.logIn(formData));
     }
     return (
-        <div>
-            <h1>LoginIn</h1>
-            <form onSubmit={handleSubmit}>
+        <Container>
+            <Title>LoginIn</Title>
+            <FormViews onSubmit={handleSubmit}>
 
                 <label>
                     <span>
-                        <input type="email" name="userEmail" placeholder="Enter your email..." required></input>
+                        <Input type="email" name="userEmail" placeholder="Enter your email..." required></Input>
                     </span>
                 </label>
                 <label>
                     <span>
-                        <input type="password" name="userPassword" placeholder="Enter your password..." required minLength={7}></input>
+                        <Input type="password" name="userPassword" placeholder="Enter your password..." required minLength={7}></Input>
                     </span>
                 </label>
-                <button type="submit">LoginIn</button>
-            </form>
-        </div>
+                <ButtonViews type="submit">LoginIn</ButtonViews>
+            </FormViews>
+        </Container>
     )
 }
 export default LoginView;

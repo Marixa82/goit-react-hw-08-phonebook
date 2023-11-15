@@ -4,9 +4,8 @@ import { store, persistor } from './redux/store.js'
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react'
 import './index.css';
-import { AppBar } from 'App.jsx';
+import { App } from 'App.jsx';
 import { BrowserRouter } from 'react-router-dom';
-// import { Navigation } from 'components/Navigation.jsx';
 
 
 
@@ -15,7 +14,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Provider store={store} >
       <PersistGate loading={null} persistor={persistor}>
         <BrowserRouter>
-          <AppBar />
+          <App />
         </BrowserRouter>
       </PersistGate>
     </Provider>

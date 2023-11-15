@@ -1,4 +1,4 @@
-import { Button, Input, Label, Form} from "./ContactForm.styled";
+import { Button, Input, Label, Form, Span} from "./ContactForm.styled";
 import {  useState } from "react";
 import { nanoid } from 'nanoid'
 import PropTypes from 'prop-types';
@@ -53,7 +53,8 @@ const validateForm = () => {
   return (
     <Form onSubmit={handelSubmit}>
       <Label htmlFor={id}>
-        Name:<Input
+        <Span>Name :</Span>
+        <Input
           type="text"
           name='name'
           value={name}
@@ -64,7 +65,8 @@ const validateForm = () => {
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required  />
       </Label>
-      <Label htmlFor=""> Number:
+      <Label htmlFor="">
+        <Span>Number :</Span>
         <Input
           type="tel"
           name='phone'

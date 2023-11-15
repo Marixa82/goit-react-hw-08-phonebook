@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
-import { Div } from '../components/App/App.styled';
+import { Container, Title } from './views.styled';
+// import { Div } from '../components/App/App.styled';
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { ContactList } from 'components/ContactList/ContactList';
 import { Filter } from 'components/Filter/Filter';
@@ -43,14 +44,14 @@ const ContactView = () => {
         dispatch(setFilter(e));
     };
     return (
-        <Div>
-            <h1>Phonebook</h1>
+        <Container>
+            <Title>Phonebook</Title>
             <ContactForm onAdd={handleAddContact} onCheckUnique={handelCheckUniqueContact} />
             <h2>Contacts</h2>
             <Filter filter={filter} onChange={handleFilterChange} />
             {isLoading && !error && <b>Request in progress...</b>}
             <ContactList items={getVisibleContact()} delContact={handleDelContact} />
-        </Div>
+        </Container>
     )
 }
 export default ContactView;

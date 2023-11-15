@@ -1,5 +1,7 @@
 import { useDispatch } from "react-redux";
 import { authOperations } from "redux/auth/auth-operations";
+import { FormViews, ButtonViews, Title, Container, Input } from "./views.styled";
+
 
 const RegisterView = () => {
     const dispatch = useDispatch();
@@ -18,27 +20,27 @@ const RegisterView = () => {
         console.log(name, email, password);
     }
     return (
-        <div>
-            <h1>Registration</h1>
-            <form onSubmit={handleSubmit}>
+        <Container>
+            <Title>Registration</Title>
+            <FormViews onSubmit={handleSubmit}>
                 <label>
                     <span>
-                        <input type="text" name="userName" placeholder="Enter your name..." required></input>
+                        <Input type="text" name="userName" placeholder="Enter your name..." required></Input>
                     </span>
                 </label>
                 <label>
                     <span>
-                        <input type="email" name="userEmail" placeholder="Enter your email..." required></input>
+                        <Input type="email" name="userEmail" placeholder="Enter your email..." required></Input>
                     </span>
                 </label>
                 <label>
                     <span>
-                        <input type="password" name="userPassword" placeholder="Enter your password..." required minLength={7}></input>
+                        <Input type="password" name="userPassword" placeholder="Enter your password..." required minLength={7}></Input>
                     </span>
                 </label>
-                <button type="submit">Register</button>
-            </form>
-        </div>
+                <ButtonViews type="submit">Register</ButtonViews>
+            </FormViews>
+        </Container>
     )
 }
 export default RegisterView;
