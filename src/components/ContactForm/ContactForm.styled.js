@@ -1,11 +1,7 @@
 import styled from '@emotion/styled';
 
 const Button = styled.button`
-  background: linear-gradient(
-    to right, 
-     #e9d362 0%,
-    #333333 51%, 
-    #e9d362 100%);
+  background-color: #333333;
   margin: 10px;
   padding: 10px 25px;
   text-align: center;
@@ -13,14 +9,13 @@ const Button = styled.button`
   transition: 0.5s;
   background-size: 200% auto;
   color: #F5FFFA;
-text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   box-shadow: 0 0 20px #eee;
   border-radius: 10px;
   display: block;
 
   &:hover {
-    background-position: right center;
-    color: #fff;
+    background-color:#e9d362;
+    color: #333333;
     text-decoration: none;
   }
 `
@@ -32,7 +27,7 @@ flex-direction:column;
 `
 const Form = styled.form`
 max-width:400px;
-border: 2px solid black;
+border: 1px solid #2A363B;
 
 padding:20px;
 border-radius: 10px;
@@ -48,11 +43,11 @@ height:20px;
 border-radius: 5px;
 border: none;
 outline:none;
-background-image: linear-gradient(to right, #EFEFBB 0%, #FFFFFF 51%, #e9d362 100%);
-&:active {
-    background-position: right center;
-    color: #000;
-    text-decoration: none;
+
+&:hover {
+  background-color: #e9d362;
+    color: #333333;
+    /* text-decoration: none; */
   }
 `
 
@@ -64,3 +59,9 @@ text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 `
 
 export { Input, Form, Label, Button, Span }
+
+// background: linear - gradient(
+//   to right,
+//   #e9d362 0 %,
+//     #333333 51 %,
+//   #e9d362 100 %);
