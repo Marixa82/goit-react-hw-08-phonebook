@@ -7,7 +7,7 @@ import { authOperations } from "redux/auth/auth-operations";
 import { Loader } from "components/Loader/Loader";
 import { Container, Header } from "App.styled";
 
-const NotFound = lazy(() => import('./views/NotFound'));
+const NotFound = lazy(() => import('../src/views/NotFound'));
 
  export const App = () => {
     const dispatch = useDispatch();
