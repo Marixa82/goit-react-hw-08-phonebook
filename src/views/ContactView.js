@@ -1,11 +1,10 @@
 import { useEffect } from 'react';
 import { Container, Title, H2 } from './views.styled';
-// import { Div } from '../components/App/App.styled';
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { ContactList } from 'components/ContactList/ContactList';
 import { Filter } from 'components/Filter/Filter';
 import { useSelector, useDispatch } from 'react-redux'
-import { fetchContacts, addContact, deleteContact } from 'redux/contacts/operations';
+import { fetchContacts, addContact } from 'redux/contacts/operations';
 import { selectFilter, selectContacts, selectError, selectIsLoading } from 'redux/contacts/selectors';
 import { setFilter } from 'redux/contacts/createSlice';
 
@@ -36,9 +35,6 @@ const ContactView = () => {
             item.name.toLowerCase().includes((filter && filter.toLowerCase()) || "")
         );
     }
-    const handleDelContact = (id) => {
-        dispatch(deleteContact(id));
-    };
 
     const handleFilterChange = (e) => {
         dispatch(setFilter(e));
@@ -50,7 +46,7 @@ const ContactView = () => {
             <H2>Contacts</H2>
             <Filter filter={filter} onChange={handleFilterChange} />
             {isLoading && !error && <b>Request in progress...</b>}
-            <ContactList items={getVisibleContact()} delContact={handleDelContact} />
+            <ContactList items={getVisibleContact()} />
         </Container>
     )
 }

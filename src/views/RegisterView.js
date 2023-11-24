@@ -22,7 +22,7 @@ const RegisterView = () => {
     return (
         <Container>
             <Title>Registration</Title>
-            <FormViews onSubmit={handleSubmit}>
+            <FormViews onSubmit={handleSubmit} autoComplete="off">
                 <label>
                     <span>
                         <Input type="text" name="userName" placeholder="Enter your name..." required></Input>
@@ -30,12 +30,12 @@ const RegisterView = () => {
                 </label>
                 <label>
                     <span>
-                        <Input type="email" name="userEmail" placeholder="Enter your email..." required></Input>
+                        <Input type="email" name="userEmail" placeholder="Enter your email..." required />
                     </span>
                 </label>
                 <label>
                     <span>
-                        <Input type="password" name="userPassword" placeholder="Enter your password..." required minLength={7}></Input>
+                        <Input type="password" name="password" required placeholder="Enter your password..." minlength="6" maxlength="12" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" title="Please include at least 1 uppercase character, 1 lowercase character, and 1 number." />
                     </span>
                 </label>
                 <ButtonViews type="submit">Register</ButtonViews>

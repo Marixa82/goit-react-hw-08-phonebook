@@ -11,8 +11,7 @@ export  const Filter = ({filter, onChange}) => {
                 name='filter'
                 value={filter}
                 onChange={({target})  => onChange(target.value)}
-                placeholder="Enter name for Search"
-                    />
+                placeholder="Enter name for Search"/>
                 </Label>
             </Div>
         )

@@ -1,7 +1,7 @@
 import React from 'react';
 import { LOGIN_ROUTE, REGISTER_ROUTE } from 'constants/route';
 import { Link } from "./StylesAppBar.styled";
-// import { NavLink } from "react-router-dom";
+
 
 export const AuthNav = () => {
     return (

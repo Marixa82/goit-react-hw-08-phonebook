@@ -5,12 +5,12 @@ font-size: 10px;
 width:200px;
 height:20px;
 border-radius: 5px;
+border: none;
 outline:none;
-background-image: linear-gradient(to right, #EFEFBB 0%, #FFFFFF 51%, #e9d362 100%);
-&:active {
-    background-position: right center;
-    color: #000;
-    text-decoration: none;
+
+&:hover {
+  background-color: #e9d362;
+    color: #333333;
   }`
 const Span = styled.span`
 margin-bottom: 5px;

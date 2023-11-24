@@ -1,11 +1,11 @@
 import styled from '@emotion/styled';
+// import { Form, Field } from 'formik';
 
 const Button = styled.button`
   background-color: #333333;
   margin: 10px;
   padding: 10px 25px;
   text-align: center;
-  text-transform: uppercase;
   transition: 0.5s;
   background-size: 200% auto;
   color: #F5FFFA;
@@ -25,7 +25,7 @@ font-size: 20px;
 display:flex;
 flex-direction:column;
 `
-const Form = styled.form`
+const FormView = styled.form`
 max-width:400px;
 border: 1px solid #2A363B;
 
@@ -47,7 +47,6 @@ outline:none;
 &:hover {
   background-color: #e9d362;
     color: #333333;
-    /* text-decoration: none; */
   }
 `
 
@@ -58,10 +57,5 @@ text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 
 `
 
-export { Input, Form, Label, Button, Span }
+export { Input, FormView, Label, Button, Span }
 
-// background: linear - gradient(
-//   to right,
-//   #e9d362 0 %,
-//     #333333 51 %,
-//   #e9d362 100 %);

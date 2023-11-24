@@ -17,19 +17,19 @@ const LoginView = () => {
     return (
         <Container>
             <Title>Login</Title>
-            <FormViews onSubmit={handleSubmit}>
+            <FormViews onSubmit={handleSubmit} >
 
                 <label>
                     <span>
-                        <Input type="email" name="userEmail" placeholder="Enter your email..." required></Input>
+                        <Input type="email" name="userEmail" placeholder="Enter your email..." required />
                     </span>
                 </label>
                 <label>
                     <span>
-                        <Input type="password" name="userPassword" placeholder="Enter your password..." required minLength={7}></Input>
+                        <Input type="password" name="userPassword" placeholder="Enter your password..." required minLength={7} />
                     </span>
                 </label>
-                <ButtonViews type="submit">LoginIn</ButtonViews>
+                <ButtonViews type="submit">Login</ButtonViews>
             </FormViews>
         </Container>
     )
