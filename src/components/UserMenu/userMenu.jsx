@@ -14,7 +14,7 @@ export const UserMenu = () => {
   return (
     <Container>
         <picture><DefaultImg/></picture>
-        <Span>Hello, {userName.UserMenu}</Span>
+        <Span>Hello, {userName}</Span>
         <Button onClick={handleLogOut}>Log Out</Button>
        
       
