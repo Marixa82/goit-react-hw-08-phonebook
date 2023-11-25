@@ -61,4 +61,5 @@ const fetchCurrentUser = createAsyncThunk('auth/refresh', async (_, thunkAPI) =>
 })
 
 
-export const authOperations = { register, logIn, logOut, fetchCurrentUser };
+const authOperations = { register, logIn, logOut, fetchCurrentUser };
+export default authOperations;

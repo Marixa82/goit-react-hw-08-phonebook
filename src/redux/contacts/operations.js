@@ -2,7 +2,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { instance } from "redux/auth/auth-operations";
 
-export const fetchContacts = createAsyncThunk(
+const fetchContacts = createAsyncThunk(
     "contacts/fetchAll",
     async (_, thunkAPI) => {
         try {
@@ -13,7 +13,7 @@ export const fetchContacts = createAsyncThunk(
         }
     }
 );
-export const addContact = createAsyncThunk(
+const addContact = createAsyncThunk(
     "contacts/addContact",
     async (items, thunkAPI) => {
         try {
@@ -24,7 +24,7 @@ export const addContact = createAsyncThunk(
         }
     }
 );
-export const deleteContact = createAsyncThunk(
+const deleteContact = createAsyncThunk(
     "contacts/deleteContact",
     async (contactId, thunkAPI) => {
         try {
@@ -35,5 +35,10 @@ export const deleteContact = createAsyncThunk(
         }
     }
 );
-
+const contactsOperations = {
+    deleteContact,
+    addContact,
+    fetchContacts
+};
+export default contactsOperations;
 

@@ -4,24 +4,23 @@ import { ContactForm } from 'components/ContactForm/ContactForm';
 import { ContactList } from 'components/ContactList/ContactList';
 import { Filter } from 'components/Filter/Filter';
 import { useSelector, useDispatch } from 'react-redux'
-import { fetchContacts, addContact } from 'redux/contacts/operations';
-import { selectFilter, selectContacts, selectError, selectIsLoading } from 'redux/contacts/selectors';
+import { contactsOperations, contactsSelector } from '../redux/contacts';
 import { setFilter } from 'redux/contacts/createSlice';
 
 const ContactView = () => {
     const dispatch = useDispatch();
-    const contacts = useSelector(selectContacts)
-    const filter = useSelector(selectFilter);
-    const isLoading = useSelector(selectIsLoading);
-    const error = useSelector(selectError);
+    const contacts = useSelector(contactsSelector.selectContacts)
+    const filter = useSelector(contactsSelector.selectFilter);
+    const isLoading = useSelector(contactsSelector.selectIsLoading);
+    const error = useSelector(contactsSelector.selectError);
 
     const handleAddContact = (data) => {
-        dispatch(addContact(data));
+        dispatch(contactsOperations.addContact(data));
     };
 
 
     useEffect(() => {
-        dispatch(fetchContacts());
+        dispatch(contactsOperations.fetchContacts());
     }, [dispatch]);
 
     const handelCheckUniqueContact = (name) => {

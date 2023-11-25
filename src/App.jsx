@@ -3,7 +3,7 @@ import { appRoutes } from "./constants/route";
 import { Suspense, useEffect, lazy } from "react";
 import {AppBar} from "components/AppBar";
 import { useDispatch} from "react-redux";
-import { authOperations } from "redux/auth/auth-operations";
+import  {authOperations}  from "redux/auth";
 import { Loader } from "components/Loader/Loader";
 import { Container, Header } from "App.styled";
 

@@ -9,8 +9,8 @@ import {
     PURGE,
     REGISTER,
 } from 'redux-persist';
-import { contactsReducer } from './contacts/createSlice';
-import authReducer from './auth/auth-slice';
+import { contactsReducer } from './contacts';
+import { authReducer } from './auth';
 import storage from 'redux-persist/lib/storage';
 
 

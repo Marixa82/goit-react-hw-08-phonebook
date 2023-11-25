@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { authOperations } from "redux/auth/auth-operations";
+import { authOperations } from "redux/auth";
 import { Title, Container, FormViews, ButtonViews, Input } from "./views.styled";
 
 const LoginView = () => {

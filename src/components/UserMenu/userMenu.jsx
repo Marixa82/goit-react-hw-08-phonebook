@@ -1,20 +1,19 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import authSelectors from 'redux/auth/auth-selectors';
-import { authOperations } from 'redux/auth/auth-operations';
+import { authOperations, authSelectors } from 'redux/auth';
 import {  DefaultImg, Container, Span, Button } from "../StylesAppBar.styled";
 
 
 export const UserMenu = () => {
   const dispatch = useDispatch();
-  const userName = useSelector(authSelectors.selectUserName);
+  const name = useSelector(authSelectors.selectUserName);
   const handleLogOut = () => {
         dispatch(authOperations.logOut());
     };
   return (
     <Container>
         <picture><DefaultImg/></picture>
-        <Span>Hello, {userName}</Span>
+        <Span>Hello, {name.name}</Span>
         <Button onClick={handleLogOut}>Log Out</Button>
        
       

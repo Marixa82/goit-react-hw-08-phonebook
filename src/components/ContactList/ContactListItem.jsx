@@ -1,7 +1,7 @@
 
 import {  Button, Span,Li } from './ContactListItem.styled';
 import PropTypes from 'prop-types';
-import { deleteContact } from 'redux/contacts/operations';
+import { contactsOperations } from 'redux/contacts';
 import { useDispatch } from 'react-redux';
 
 export const ContactListItem = ({ id, name, number }) => {
@@ -11,7 +11,7 @@ export const ContactListItem = ({ id, name, number }) => {
             
                 <Span><b>{name}</b></Span>
                 <Span>{number}</Span>
-                <Button type="button" onClick={()=> dispatch(deleteContact(id))}>Delete</Button>
+                <Button type="button" onClick={()=> dispatch(contactsOperations.deleteContact(id))}>Delete</Button>
             
         </Li>
     )
