@@ -7,10 +7,7 @@ import {  DefaultImg, Container, Span, Button } from "../StylesAppBar.styled";
 export const UserMenu = () => {
   const dispatch = useDispatch();
   const name = useSelector(authSelectors.selectUserName);
-  // const handleLogOut = () => {
-  //       dispatch(authOperations.logOut());
-  //   };
-  return (
+    return (
     <Container>
         <picture><DefaultImg/></picture>
         <Span>Hello,{name}</Span>

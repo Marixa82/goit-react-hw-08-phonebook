@@ -1,5 +1,5 @@
 import React from 'react';
-import { authSelectors } from 'redux/auth';
+import { authSelectors } from '../redux/auth';
 import { UserMenu } from './UserMenu/userMenu';
 import { AuthNav } from './AuthNav';
 import { Navigation } from './Navigation';

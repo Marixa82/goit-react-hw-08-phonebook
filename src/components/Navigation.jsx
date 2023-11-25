@@ -2,7 +2,7 @@
 import { useSelector } from "react-redux";
 import { HOME_ROUTE, CONTACTS_ROUTE } from "../constants/route";
 import { Link } from "./StylesAppBar.styled";
-import { authSelectors } from "redux/auth";
+import { authSelectors } from '../redux/auth';
 
 
 export const Navigation = () => {
