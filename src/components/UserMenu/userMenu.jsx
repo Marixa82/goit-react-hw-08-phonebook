@@ -6,15 +6,15 @@ import {  DefaultImg, Container, Span, Button } from "../StylesAppBar.styled";
 
 export const UserMenu = () => {
   const dispatch = useDispatch();
-  const name = useSelector(authSelectors.selectUserName);
-  const handleLogOut = () => {
-        dispatch(authOperations.logOut());
-    };
+  const {name} = useSelector(authSelectors.selectUserName);
+  // const handleLogOut = () => {
+  //       dispatch(authOperations.logOut());
+  //   };
   return (
     <Container>
         <picture><DefaultImg/></picture>
-        <Span>Hello, {name.name}</Span>
-        <Button onClick={handleLogOut}>Log Out</Button>
+        <Span>Hello, {name}</Span>
+        <Button onClick={() => dispatch(authOperations.logOut())}>Log Out</Button>
        
       
     </Container>
