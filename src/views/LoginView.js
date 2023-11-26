@@ -1,9 +1,10 @@
 import { useDispatch } from "react-redux";
-import { authOperations } from "redux/auth";
+import { authOperations } from '../redux/auth';
 import { Title, Container, FormViews, ButtonViews, Input } from "./views.styled";
 
 const LoginView = () => {
     const dispatch = useDispatch();
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const email = e.currentTarget.elements.userEmail.value;
