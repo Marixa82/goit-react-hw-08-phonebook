@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
+import { Formik, Field, Form } from 'formik';
 
-const FormViews = styled.form`
+
+const FormViews = styled(Formik)`
 text-align: center;
 max-width:250px;
 border: 1px solid black;
@@ -12,6 +14,30 @@ flex-direction:column;
 gap:20px;
 background-color: rgba(0, 0, 0, 0.3);
 `
+const FormField = styled(Form)`
+text-align: center;
+max-width:250px;
+border: 1px solid black;
+margin-left:20px;
+padding:20px;
+border-radius: 10px;
+display:flex;
+flex-direction:column;
+gap:20px;
+background-color: rgba(0, 0, 0, 0.3);
+`
+// const FormViews = styled.form`
+// text-align: center;
+// max-width:250px;
+// border: 1px solid black;
+// margin-left:20px;
+// padding:20px;
+// border-radius: 10px;
+// display:flex;
+// flex-direction:column;
+// gap:20px;
+// background-color: rgba(0, 0, 0, 0.3);
+// `
 const ButtonViews = styled.button`
   background-color: #333333;
   margin: 10px;
@@ -76,7 +102,7 @@ align-items: center;
 flex-direction: column;
     
 `
-const Input = styled.input`
+const Input = styled(Field)`
  font-size: 10px;
 width:200px;
 height:20px;
@@ -89,6 +115,19 @@ outline:none;
     color: #333333;
   }
  `
+// const Input = styled.input`
+//  font-size: 10px;
+// width:200px;
+// height:20px;
+// border-radius: 5px;
+// border: none;
+// outline:none;
+
+// &:hover {
+//   background-color: #e9d362;
+//     color: #333333;
+//   }
+//  `
 const Span = styled.span`
  margin-top: 15px;
  font-weight: 500;
@@ -107,4 +146,4 @@ text-align: center;
 
  `
 
-export { Container, Title, Div, ButtonViews, FormViews, Input, H2, P, Span, Error }
+export { Container, Title, Div, ButtonViews, FormViews, Input, H2, P, Span, Error, FormField }
