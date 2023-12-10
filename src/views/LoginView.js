@@ -1,13 +1,9 @@
 import { useDispatch } from "react-redux";
 import { authOperations } from '../redux/auth';
-import { Title, Container, FormViews, ButtonViews, Input, FormField } from "./views.styled";
+import { Title, Container, FormViews, Error, ButtonViews, Input, FormField } from "./views.styled";
 import * as Yup from 'yup';
 
 const DisplayingErrorMessagesSchema = Yup.object().shape({
-    username: Yup.string()
-        .min(2, 'Too Short!')
-        .max(50, 'Too Long!')
-        .required('Required'),
     email: Yup.string().email('Invalid email').required('Required'),
     password: Yup.string()
         .min(8, 'Too Short!')
@@ -23,8 +19,8 @@ const LoginView = () => {
             <Title>Registration</Title>
             <FormViews
                 initialValues={{
-                    username: '',
                     email: '',
+                    password: '',
                 }}
                 validationSchema={DisplayingErrorMessagesSchema}
                 onSubmit={(values, { resetForm }) => {
@@ -34,11 +30,23 @@ const LoginView = () => {
             >
                 {({ values, errors, touched, handleChange, handleBlur, handleSubmit }) => (
                     <FormField onSubmit={handleSubmit}>
-                        <Input name="username" value={values.username} placeholder="Enter your name..." />
-                        {touched.username && errors.username && <div>{errors.username}</div>}
+                        <Input
+                            name="email"
+                            type="email"
+                            onChange={handleChange}
+                            value={values.email}
+                            onBlur={handleBlur}
+                            placeholder="Enter your email..." />
+                        {touched.email && errors.email && <Error>{errors.email}</Error>}
 
-                        <Input name="email" value={values.email} placeholder="Enter your email..." />
-                        {touched.email && errors.email && <div>{errors.email}</div>}
+                        <Input
+                            name="password"
+                            type="password"
+                            onChange={handleChange}
+                            value={values.password}
+                            onBlur={handleBlur}
+                            placeholder="Enter your password..." />
+                        {touched.password && errors.password && <Error>{errors.password}</Error>}
 
                         <ButtonViews type="submit">Login</ButtonViews>
                     </FormField>
@@ -69,3 +77,5 @@ export default LoginView;
         <ButtonViews type="submit">Login</ButtonViews>
     </FormViews>
 </Container> */
+// { touched.email && errors.email && <div>{errors.email}</div> }
+// { touched.username && errors.username && <div>{errors.username}</div> }

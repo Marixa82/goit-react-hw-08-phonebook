@@ -133,16 +133,16 @@ const Span = styled.span`
  font-weight: 500;
  
  &:hover{
- /* background-color: rgba(0, 0, 0, 0.3); */
+
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 color: #e9d362;
 }`
 
-const Error = styled.p`
-font-weight: 500;
-max-width: 200px; 
-padding: 5px;
-text-align: center;
+const Error = styled.div`
+  color: #fc8181;
+  font-size: 0.75rem;
+  text-align: left;
+  margin-top: 0.25rem;
 
  `
 

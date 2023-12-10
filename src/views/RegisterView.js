@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { authOperations } from "redux/auth";
-import { FormViews, FormField, ButtonViews, Title, Container, Input } from "./views.styled";
+import { FormViews, FormField, ButtonViews, Title, Container, Input, Error } from "./views.styled";
 import * as Yup from 'yup';
 
 const DisplayingErrorMessagesSchema = Yup.object().shape({
@@ -35,14 +35,38 @@ const RegisterView = () => {
             >
                 {({ values, errors, touched, handleChange, handleBlur, handleSubmit }) => (
                     <FormField onSubmit={handleSubmit}>
-                        <Input name="username" value={values.username} placeholder="Enter your name..." />
-                        {touched.username && errors.username && <div>{errors.username}</div>}
+                        <Input
+                            name="username"
+                            type="text"
+                            onChange={handleChange}
+                            value={values.username}
+                            onBlur={handleBlur}
+                            placeholder="Enter your name..."
+                            className={errors.username && touched.username ? "input-error" : ""}
+                        />
+                        {touched.username && errors.username && <Error>{errors.username}</Error>}
 
-                        <Input name="email" value={values.email} placeholder="Enter your email..." />
-                        {touched.email && errors.email && <div>{errors.email}</div>}
+                        <Input
+                            name="email"
+                            type="email"
+                            onChange={handleChange}
+                            value={values.email}
+                            onBlur={handleBlur}
+                            placeholder="Enter your email..."
+                            className={errors.email && touched.email ? "input-error" : ""}
+                        />
+                        {touched.email && errors.email && <Error>{errors.email}</Error>}
 
-                        <Input name="password" value={values.password} placeholder="Enter your password..." />
-                        {touched.password && errors.password && <div>{errors.password}</div>}
+                        <Input
+                            name="password"
+                            type="password"
+                            onChange={handleChange}
+                            value={values.password}
+                            onBlur={handleBlur}
+                            placeholder="Enter your password..."
+                            className={errors.password && touched.password ? "input-error" : ""}
+                        />
+                        {touched.password && errors.password && <Error>{errors.password}</Error>}
 
                         <ButtonViews type="submit">Register</ButtonViews>
                     </FormField>
