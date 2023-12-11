@@ -1,28 +1,21 @@
 import { useDispatch } from "react-redux";
 import { authOperations } from '../redux/auth';
 import { Title, Container, FormViews, Error, ButtonViews, Input, FormField } from "./views.styled";
-import * as Yup from 'yup';
+import { SignSchema } from "components/Schemas/schemas";
 
-const DisplayingErrorMessagesSchema = Yup.object().shape({
-    email: Yup.string().email('Invalid email').required('Required'),
-    password: Yup.string()
-        .min(8, 'Too Short!')
-        .matches(/[a-z]/, /[A-Z]/, /\s/, "Error")
-        .required('Required'),
-});
+
 const LoginView = () => {
     const dispatch = useDispatch();
 
-
     return (
         <Container>
-            <Title>Registration</Title>
+            <Title>Login</Title>
             <FormViews
                 initialValues={{
                     email: '',
                     password: '',
                 }}
-                validationSchema={DisplayingErrorMessagesSchema}
+                validationSchema={SignSchema}
                 onSubmit={(values, { resetForm }) => {
                     dispatch(authOperations.register(values));
                     resetForm();

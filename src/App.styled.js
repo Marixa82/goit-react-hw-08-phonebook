@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 const Container = styled.div`
-
+text-align:center;
     max-width: 1158px;
     height: 1128px;
     margin-left: auto;

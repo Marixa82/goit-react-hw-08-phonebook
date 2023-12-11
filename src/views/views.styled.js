@@ -1,43 +1,43 @@
 import styled from '@emotion/styled';
-import { Formik, Field, Form } from 'formik';
+import { Form } from 'formik';
 
 
-const FormViews = styled(Formik)`
-text-align: center;
-max-width:250px;
-border: 1px solid black;
-margin-left:20px;
-padding:20px;
-border-radius: 10px;
-display:flex;
-flex-direction:column;
-gap:20px;
-background-color: rgba(0, 0, 0, 0.3);
-`
-const FormField = styled(Form)`
-text-align: center;
-max-width:250px;
-border: 1px solid black;
-margin-left:20px;
-padding:20px;
-border-radius: 10px;
-display:flex;
-flex-direction:column;
-gap:20px;
-background-color: rgba(0, 0, 0, 0.3);
-`
-// const FormViews = styled.form`
+// const FormViews = styled(Formik)`
 // text-align: center;
 // max-width:250px;
 // border: 1px solid black;
-// margin-left:20px;
 // padding:20px;
 // border-radius: 10px;
 // display:flex;
 // flex-direction:column;
-// gap:20px;
+// gap:10px;
 // background-color: rgba(0, 0, 0, 0.3);
 // `
+const FormField = styled(Form)`
+text-align: center;
+ width: 95%;
+  max-width: 400px;
+  margin: 0 auto;
+border: 1px solid black;
+padding:20px;
+border-radius: 10px;
+display:flex;
+flex-direction:column;
+gap:10px;
+background-color: rgba(0, 0, 0, 0.3);
+`
+const FormViews = styled.form`
+text-align: center;
+max-width:250px;
+border: 1px solid black;
+margin-left:20px;
+padding:20px;
+border-radius: 10px;
+display:flex;
+flex-direction:column;
+gap:20px;
+background-color: rgba(0, 0, 0, 0.3);
+`
 const ButtonViews = styled.button`
   background-color: #333333;
   margin: 10px;
@@ -102,7 +102,34 @@ align-items: center;
 flex-direction: column;
     
 `
-const Input = styled(Field)`
+// const Input = styled(Field)`
+//  /* font-size: 10px;
+// width:200px;
+// height:20px;
+// border-radius: 5px;
+// border: none;
+// outline:none; */
+// width: 100%;
+//   padding: 0.65rem 0.5rem;
+//   font-size: 1rem;
+//   color: #2d3748;
+//   border: 2px solid #4a5568;
+//   /* background-color: #2d3748; */
+//   border-radius: 10px;
+//   outline: none;
+// &:focus {
+//   /* background-color: #e9d362;
+//     color: #333333; */
+//     border-color: #4299e1;
+//   };
+//   &::grammar-error{
+//      border-color: #fc8181;
+//   }
+//   &::placeholder {
+//     color: #a0aec0;
+//   }
+//  `
+const Input = styled.input`
  font-size: 10px;
 width:200px;
 height:20px;
@@ -115,19 +142,6 @@ outline:none;
     color: #333333;
   }
  `
-// const Input = styled.input`
-//  font-size: 10px;
-// width:200px;
-// height:20px;
-// border-radius: 5px;
-// border: none;
-// outline:none;
-
-// &:hover {
-//   background-color: #e9d362;
-//     color: #333333;
-//   }
-//  `
 const Span = styled.span`
  margin-top: 15px;
  font-weight: 500;
