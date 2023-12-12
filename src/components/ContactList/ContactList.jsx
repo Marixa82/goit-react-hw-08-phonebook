@@ -1,12 +1,14 @@
-import PropTypes from 'prop-types';
 import {ContactListItem} from "./ContactListItem";
 import { Ul } from './ContactList.styled';
+import { selectVisibleContacts } from "redux/contacts/selectors";
+import { useSelector } from "react-redux";
 
-export const ContactList = ({ items}) => {
-    if(items.length===0) return null
+export const ContactList = () => {
+    const getVisibleContacts = useSelector(selectVisibleContacts);
+    if(getVisibleContacts===0) return null
     return (
             <Ul>
-                {items.map(item => {
+                {getVisibleContacts.map(item => {
                     const { id } = item
                     return (
                         < ContactListItem
@@ -18,7 +20,4 @@ export const ContactList = ({ items}) => {
     )}
     
 
-    ContactList.propTypes = {
-    items: PropTypes.array.isRequired,
-    
- }
+

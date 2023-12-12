@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 // import { Formik, ErrorMessage } from 'formik';
 import { nanoid } from 'nanoid';
-import PropTypes from 'prop-types';
 import { Input, Label, FormView, Button, Span } from './ContactForm.styled';
+import { useSelector, useDispatch } from 'react-redux';
+import { contactsOperations, contactsSelector } from 'redux/contacts';
 
-export const ContactForm = (props) => {
+
+export const ContactForm = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
+  const dispatch = useDispatch();
+  const contacts = useSelector(contactsSelector.selectContacts);
 
   const handleChangeForm = event => {
     const { name, value } = event.target;
@@ -24,14 +28,20 @@ export const ContactForm = (props) => {
 
   const id = nanoid();
 
+   const handelCheckUniqueContact = (name) => {
+   const isNameContact = !!contacts.find((item) => item.name.toLowerCase() === name.toLowerCase());
+    isNameContact && alert(`${name} is already in items`)
+    return !isNameContact
+  }
   const handelSubmit = (e) => {
     e.preventDefault();
-    const { onAdd } = props;
     const isValidatedForm = validateForm();
-
-    if (isValidatedForm) {
-      onAdd({ id, name, number });
-      resetForm();
+if (isValidatedForm) {
+    dispatch(contactsOperations.addContact({ id, name, number }));
+    resetForm();
+    }
+  else {
+    resetForm();
     }
   };
 
@@ -41,12 +51,11 @@ export const ContactForm = (props) => {
   };
 
   const validateForm = () => {
-    const { onCheckUnique } = props;
     if (!name || !number) {
       alert('Some field is empty');
       return false;
     }
-    return onCheckUnique(name);
+    return handelCheckUniqueContact(name);
   };
 
   return (
@@ -84,10 +93,6 @@ export const ContactForm = (props) => {
   );
 };
 
-ContactForm.propTypes = {
-  onAdd: PropTypes.func.isRequired,
-  onCheckUnique: PropTypes.func.isRequired,
-};
 
 
 
