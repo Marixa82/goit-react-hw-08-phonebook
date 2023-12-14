@@ -12,16 +12,15 @@ const RegisterForm = () => {
             name: form.elements.userName.value,
             email: form.elements.userEmail.value,
             password: form.elements.userPassword.value,
-        })
-        );
+        }));
         form.reset();
-    }
-    return (
+    };
 
+    return (
         <FormViews onSubmit={handleSubmit} autoComplete="off">
             <label>
                 <span>
-                    <Input type="text" name="userName" placeholder="Enter your name..." required></Input>
+                    <Input type="text" name="userName" placeholder="Enter your name..." required />
                 </span>
             </label>
             <label>
@@ -31,15 +30,25 @@ const RegisterForm = () => {
             </label>
             <label>
                 <span>
-                    <Input type="password" name="userPassword" required placeholder="Enter your password..." minlength="6" maxlength="12" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" title="Please include at least 1 uppercase character, 1 lowercase character, and 1 number." />
+                    <Input
+                        type="password"
+                        name="userPassword"
+                        required
+                        placeholder="Enter your password..."
+                        minLength="6"
+                        maxLength="12"
+                        pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"
+                        title="Please include at least 1 uppercase character, 1 lowercase character, and 1 number."
+                    />
                 </span>
             </label>
             <Button type="submit">Register</Button>
         </FormViews>
+    );
+};
 
-    )
-}
 export default RegisterForm;
+
 
 
 // const handleSubmit = (e) => {

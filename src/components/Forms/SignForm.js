@@ -1,11 +1,10 @@
 import { useDispatch } from "react-redux";
 import { authOperations } from "redux/auth";
 import { FormViews, Button, Input } from "./Formik.styled";
-// import { SignSchema } from "components/Schemas/schemas";
-
 
 const SignForm = () => {
     const dispatch = useDispatch();
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const email = e.currentTarget.elements.userEmail.value;
@@ -15,12 +14,13 @@ const SignForm = () => {
             email,
             password,
         };
-        dispatch(authOperations.logIn(formData));
-    }
-    return (
-        <FormViews
-            onSubmit={handleSubmit} >
 
+        // Ensure appropriate validation and error handling here
+        dispatch(authOperations.logIn(formData));
+    };
+
+    return (
+        <FormViews onSubmit={handleSubmit}>
             <label>
                 <span>
                     <Input type="email" name="userEmail" placeholder="Enter your email..." required />
@@ -33,9 +33,9 @@ const SignForm = () => {
             </label>
             <Button type="submit">Login</Button>
         </FormViews>
+    );
+};
 
-    )
-}
 export default SignForm;
 
 

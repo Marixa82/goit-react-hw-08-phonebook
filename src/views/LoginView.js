@@ -1,4 +1,4 @@
-import { Container, Title } from "./views.styled";
+import { Container, H2 } from "./views.styled";
 import SignForm from "components/Forms/SignForm";
 
 
@@ -7,7 +7,7 @@ const LoginView = () => {
 
     return (
         <Container>
-            <Title>Login</Title>
+            <H2>Login</H2>
             <SignForm />
         </Container>
     )

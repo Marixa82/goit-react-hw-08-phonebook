@@ -1,11 +1,11 @@
-import { Container, Title } from "./views.styled";
+import { Container, H2 } from "./views.styled";
 import RegisterForm from "components/Forms/RegistrationForm";
 const RegisterView = () => {
 
     return (
 
         <Container>
-            <Title>Registration</Title>
+            <H2>Registration</H2>
             <RegisterForm />
         </Container >
     )

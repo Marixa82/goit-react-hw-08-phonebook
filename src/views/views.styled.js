@@ -25,7 +25,7 @@ color: #e9d362;
 }`
 
 const Title = styled.h1`
-font-weight: 500;
+font-weight: 900;
 margin: 15px 0px;
 color: #F5FFFA;
 text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);

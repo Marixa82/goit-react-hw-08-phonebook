@@ -16,7 +16,7 @@ export const token = {
 //Registration user//
 const register = createAsyncThunk('auth/register', async credentials => {
     try {
-        const { data } = await instance.post('/users/signup', credentials);
+        const { data } = await instance.post(`/users/signup`, credentials);
         token.set(data.token);
         console.log('credentials', data)
         return data;
@@ -28,7 +28,7 @@ const register = createAsyncThunk('auth/register', async credentials => {
 //LoginIn user//
 const logIn = createAsyncThunk('auth/login', async credentials => {
     try {
-        const { data } = await instance.post('/users/login', credentials);
+        const { data } = await instance.post(`/users/login`, credentials);
         token.set(data.token);
         return data;
     } catch (error) {
@@ -39,7 +39,7 @@ const logIn = createAsyncThunk('auth/login', async credentials => {
 //LogOut user//
 const logOut = createAsyncThunk('auth/logOut', async () => {
     try {
-        await instance.post('/users/logOut');
+        await instance.post(`/users/logOut`);
         token.unset();
     } catch (error) { }
 });

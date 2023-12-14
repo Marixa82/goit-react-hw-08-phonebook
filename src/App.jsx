@@ -18,12 +18,10 @@ const NotFound = lazy(() => import('../src/views/NotFound'));
         dispatch(authOperations.fetchCurrentUser());
     }, [dispatch]);
     
-    return  (
-      <Container>
-        {{isRefreshing} ? (
-          <b>Refreshing user...</b>
-        ) : (
-             <>
+   return isRefreshing ? (
+    <b>Refreshing user...</b>
+  ) : (
+   <Container>  
                <Header>
                   <AppBar/>
               </Header>
@@ -37,11 +35,9 @@ const NotFound = lazy(() => import('../src/views/NotFound'));
             </Routes>
           </Suspense>
             </main>
-            </>
-        
-        
-        )}
-           </Container>
-    )
+        </Container>)
+           
     
-}
+    
+};
+

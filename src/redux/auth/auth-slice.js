@@ -13,12 +13,12 @@ const authSlice = createSlice({
     initialState,
     extraReducers: {
         [authOperations.register.fulfilled](state, action) {
-            state.userData = action.payload.userData;
+            state.userData = action.payload.user;
             state.token = action.payload.token;
             state.isLoggedIn = true;
         },
         [authOperations.logIn.fulfilled](state, action) {
-            state.userData = action.payload.userData;
+            state.userData = action.payload.user;
             state.token = action.payload.token;
             state.isLoggedIn = true;
         },
@@ -26,12 +26,13 @@ const authSlice = createSlice({
             state.userData = { name: null, email: null };
             state.token = null;
             state.isLoggedIn = false;
+            state.isRefreshing = false;
         },
         [authOperations.fetchCurrentUser.pending](state) {
             state.isRefreshing = true;
         },
         [authOperations.fetchCurrentUser.fulfilled](state, action) {
-            state.userData = action.payload.userData;
+            state.userData = action.payload;
             state.isLoggedIn = true;
             state.isRefreshing = false;
         },
