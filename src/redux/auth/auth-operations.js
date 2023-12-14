@@ -37,11 +37,13 @@ const logIn = createAsyncThunk('auth/login', async credentials => {
 });
 
 //LogOut user//
-const logOut = createAsyncThunk('auth/logOut', async () => {
+const logOut = createAsyncThunk('auth/logOut', async (_, thunkAPI) => {
     try {
         await instance.post(`/users/logOut`);
         token.unset();
-    } catch (error) { }
+    } catch (error) {
+        return thunkAPI.rejectWithValue(error.message);
+    }
 });
 
 //Back user from LocalStoredge - refresh//
