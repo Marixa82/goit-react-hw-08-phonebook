@@ -11,34 +11,34 @@ const initialState = {
 const authSlice = createSlice({
     name: 'auth',
     initialState,
-    extraReducers: {
-        [authOperations.register.fulfilled](state, action) {
-            state.userData = action.payload.user;
-            state.token = action.payload.token;
-            state.isLoggedIn = true;
-        },
-        [authOperations.logIn.fulfilled](state, action) {
-            state.userData = action.payload.user;
-            state.token = action.payload.token;
-            state.isLoggedIn = true;
-        },
-        [authOperations.logOut.fulfilled](state) {
-            state.userData = { name: null, email: null };
-            state.token = null;
-            state.isLoggedIn = false;
-            state.isRefreshing = false;
-        },
-        [authOperations.fetchCurrentUser.pending](state) {
-            state.isRefreshing = true;
-        },
-        [authOperations.fetchCurrentUser.fulfilled](state, action) {
-            state.userData = action.payload;
-            state.isLoggedIn = true;
-            state.isRefreshing = false;
-        },
-        [authOperations.fetchCurrentUser.rejected](state) {
-            state.isRefreshing = false;
-        },
+    extraReducers: builder => {
+        builder
+            .addCase(authOperations.register.fulfilled, (state, action) => {
+                state.userData = action.payload.user;
+                state.token = action.payload.token;
+                state.isLoggedIn = true;
+            })
+            .addCase(authOperations.logIn.fulfilled, (state, action) => {
+                state.userData = action.payload.user;
+                state.token = action.payload.token;
+                state.isLoggedIn = true;
+            })
+            .addCase(authOperations.logOut.fulfilled, (state) => {
+                state.userData = { name: null, email: null };
+                state.token = null;
+                state.isLoggedIn = false;
+                state.isRefreshing = false;
+            })
+            .addCase(authOperations.fetchCurrentUser.pending, (state) => {
+                state.isRefreshing = true;
+            })
+            .addCase(authOperations.fetchCurrentUser.fulfilled, (state, action) => {
+                state.userData = action.payload;
+                state.isLoggedIn = true;
+                state.isRefreshing = false;
+            }).addCase(authOperations.fetchCurrentUser.rejected, (state) => {
+                state.isRefreshing = false;
+            })
     },
 });
 export default authSlice.reducer;

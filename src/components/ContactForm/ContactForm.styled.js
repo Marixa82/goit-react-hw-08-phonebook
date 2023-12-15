@@ -44,13 +44,14 @@ border-radius: 5px;
 border: none;
 outline:none;
 
-&:hover {
+/* &:hover {
   background-color: #e9d362;
     color: #333333;
-  }
+  } */
 `
 
 const Span = styled.span`
+text-align: start;
 margin-bottom: 5px;
 color: #F5FFFA;
 text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);

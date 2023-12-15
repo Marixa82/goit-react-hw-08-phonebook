@@ -10,9 +10,10 @@ text-align:center;
 `
 const Header = styled.header`
    border-bottom: solid 2px rgba(0,0,0,0.3);
-   /* position: fixed; */
    width: 100%;
   top: 0;
-  /* z-index: 1000; */
-`
-export { Container, Header }
+ `
+const Text = styled.b`
+ text-align: center;
+ `
+export { Container, Header, Text }

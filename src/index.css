@@ -26,6 +26,7 @@ body {
   background-size: cover;
   background-position: center;
   background-color: rgb(245, 222, 179);
+  overflow: hidden;
 }
 
 code {
@@ -50,9 +51,3 @@ a {
   color: currentColor;
   text-decoration: none;
 }
-/* nav {
-  display: flex;
-  gap: 15px;
-  margin: auto;
-  justify-content: space-between;
-} */

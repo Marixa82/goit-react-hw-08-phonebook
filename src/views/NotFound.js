@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { Div, Span, Error } from './views.styled';
 
 const NotFound = () => {
-
     return (
         <Div>
             <Error>Error 404. Sorry, page wasn`t found.{' '}</Error>

@@ -5,7 +5,7 @@ import {AppBar} from "components/AppBar";
 import { useDispatch} from "react-redux";
 import  {authOperations}  from "redux/auth";
 import { Loader } from "components/Loader/Loader";
-import { Container, Header } from "App.styled";
+import { Container, Header, Text } from "App.styled";
 import { useAuth } from "hooks";
 
 const NotFound = lazy(() => import('../src/views/NotFound'));
@@ -19,7 +19,7 @@ const NotFound = lazy(() => import('../src/views/NotFound'));
     }, [dispatch]);
     
    return isRefreshing ? (
-    <b>Refreshing user...</b>
+    <Text>Refreshing user...</Text>
   ) : (
    <Container>  
                <Header>

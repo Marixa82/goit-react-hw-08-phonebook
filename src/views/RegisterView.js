@@ -3,7 +3,6 @@ import RegisterForm from "components/Forms/RegistrationForm";
 const RegisterView = () => {
 
     return (
-
         <Container>
             <H2>Registration</H2>
             <RegisterForm />
