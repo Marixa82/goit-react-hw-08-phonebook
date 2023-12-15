@@ -10,11 +10,12 @@ const ModalBackground = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 9999;
   `;
 
 const ModalContainer = styled.div`
 width: 300px;
-height: auto;
+height: 400px auto;
 border-radius: 12px;
 background-color: rgb(245, 222, 179);
 box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;

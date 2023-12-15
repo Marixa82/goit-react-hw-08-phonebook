@@ -18,7 +18,7 @@ const SignForm = () => {
         dispatch(authOperations.logIn(formData));
     };
     return (
-        <FormViews onSubmit={handleSubmit}>
+        <FormViews onSubmit={handleSubmit} autoComplete="off">
             <label>
                 <span>
                     <Input type="email" name="userEmail" placeholder="Enter your email..." required />
