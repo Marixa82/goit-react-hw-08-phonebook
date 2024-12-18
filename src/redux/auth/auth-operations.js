@@ -2,7 +2,7 @@ import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
 export const instance = axios.create({
-    baseURL: 'https://connections-api.herokuapp.com',
+    baseURL: 'https://my-heroku-api-0658185dbf34.herokuapp.com/',
 });
 
 export const token = {
@@ -46,7 +46,7 @@ const logOut = createAsyncThunk('auth/logOut', async (_, thunkAPI) => {
     }
 });
 
-//Back user from LocalStoredge - refresh//
+//Back user from LocalStorage - refresh//
 
 const fetchCurrentUser = createAsyncThunk('auth/refresh', async (_, thunkAPI) => {
     const state = thunkAPI.getState();
